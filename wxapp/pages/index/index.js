@@ -3,24 +3,68 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    latitude: 31.878909,
+    longitude: 117.271788,
+    controls: [{
+      id: 1,
+      iconPath: '/resources/location.jpg',
+      position: {
+        left: 265,
+        top: 513,
+        width: 45,
+        height: 45
+      },
+      clickable: true
+    }]
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+
   onLoad: function () {
     console.log('onLoad')
     var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
+    // 获取定位，并把位置标示出来
+    app.getLocationInfo(function (locationInfo) {
+      console.log('map', locationInfo);
+      var query = wx.createSelectorQuery()
+      var map = query.select("map4select");
+      map.setCenter(locationInfo);
       that.setData({
-        userInfo:userInfo
-      })
+        longitude: locationInfo.longitude,
+        latitude: locationInfo.latitude})
     })
-  }
+
+    wx.getSystemInfo({
+      success: function(res) {
+        var left = res.screenWidth - 10 -45;
+        var top = res.screenHeight - 20 - 44 - 10 - 45;
+
+        console.log(left);
+        console.log(top);
+
+        that.setData({
+          'controls[0].position.left': left,
+          'controls[0].position.top': top
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+
+  controltap: function (e) {
+    console.log(e.controlId);
+    if (e.controlId == 1) {
+      wx.getLocation({
+        type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+        success: function (res) {
+          var latitude = res.latitude
+          var longitude = res.longitude
+          wx.openLocation({
+            latitude: latitude,
+            longitude: longitude,
+            scale: 28
+          })
+        }
+      })
+    }
+  },
 })
