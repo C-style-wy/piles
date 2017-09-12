@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>portal</artifactId>
+        <groupId>com.kgx.piles.hl</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.kgx.piles.hl.portal</groupId>
+    <artifactId>portal-clt</artifactId>
+    <packaging>war</packaging>
+    <name>portal-clt</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+
+    </dependencies>
+    <build>
+        <finalName>portal-clt</finalName>
+    </build>
+</project>

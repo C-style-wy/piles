@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>oms</artifactId>
+        <groupId>com.kgx.piles.hl</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.kgx.piles.hl.oms</groupId>
+    <artifactId>oms-basic</artifactId>
+    <packaging>war</packaging>
+    <name>oms-basic</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+       
+    </dependencies>
+    <build>
+        <finalName>oms-basic</finalName>
+    </build>
+</project>

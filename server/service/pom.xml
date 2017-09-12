@@ -3,13 +3,33 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.kgx</groupId>
   <artifactId>piles</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0.0</version>
+  <modules>
+    <module>portal</module>
+    <module>core</module>
+    <module>interaction</module>
+      <module>oms</module>
+  </modules>
   <name>piles</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
   </dependencies>
+
+  <properties>
+    <spring.version>4.3.8.RELEASE</spring.version>
+  </properties>
+
   <build>
     <finalName>piles</finalName>
   </build>
