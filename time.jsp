@@ -4,7 +4,7 @@
 <%@ page import="java.text.*"%>  
 
 <% 
-String datetime=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()); //获取系统时间 
+String datetime=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()); //娉ㄩ噴wy
 %>
 
 <%= datetime%> 
