@@ -3,6 +3,7 @@ package com.kgx.piles.oms.basic.webapp.controller;
 import com.kgx.piles.core.base.BaseController;
 import com.kgx.piles.core.util.PageData;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,6 +25,16 @@ public class LoginController extends BaseController{
         pd.put("SYSNAME", "管理系统");
         mv.setViewName("system/admin/login");
         mv.addObject("pd", pd);
+        return mv;
+    }
+
+    @RequestMapping(value = "/main/{changeMenu}")
+    public ModelAndView login_index(@PathVariable("changeMenu") String changeMenu) {
+        ModelAndView mv = this.getModelAndView();
+        PageData pd = this.getPageData();
+
+        mv.setViewName("system/admin/index");
+        mv.addObject("pd",pd);
         return mv;
     }
 }

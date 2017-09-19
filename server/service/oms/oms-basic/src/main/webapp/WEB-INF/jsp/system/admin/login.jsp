@@ -69,21 +69,21 @@
                                                 <fieldset>
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="用户名" />
+															<input id="loginname" type="text" class="form-control" placeholder="用户名" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                                     </label>
 
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密  码" />
+															<input id="password" type="password" class="form-control" placeholder="密  码" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
                                                     </label>
 
                                                     <div class="block clearfix">
-                                                        <span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="验证码" />
+                                                        <span class="input-icon input-icon-right">
+															<input id="code" type="text" class="form-control" placeholder="验证码" />
 														</span>
                                                     </div>
 
@@ -95,7 +95,7 @@
                                                             <span class="lbl"> 记住密码</span>
                                                         </label>
 
-                                                        <button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+                                                        <button type="button" onclick="severCheck();" class="width-35 pull-right btn btn-sm btn-primary">
                                                             <i class="ace-icon fa fa-key"></i>
                                                             <span class="bigger-110">登陆</span>
                                                         </button>
@@ -115,6 +115,41 @@
         </div>
 
         <script src="static/components/jquery/dist/jquery.js"></script>
+
+        <script type="text/javascript">
+            function severCheck() {
+                if(check()) {
+                    window.location.href = "main/index";
+                }
+            }
+
+            function check() {
+                if($("#loginname").val() == "") {
+                    $("#loginname").tips({
+                        side: 2,
+                        msg: '用户名不得为空',
+                        bg: '#AE81FF',
+                        time: 3
+                    });
+                    $("#loginname").focus();
+                    return false;
+                } else {
+                    $("#loginname").val(jQuery.trim($('#loginname').val()));
+                }
+                if($("#password").val() == "") {
+                    $("#password").tips({
+                        side: 2,
+                        msg: '密码不得为空',
+                        bg: '#AE81FF',
+                        time: 3
+                    });
+
+                    $("#password").focus();
+                    return false;
+                }
+            }
+        </script>
+        <script type="text/javascript" src="static/js/jquery.tips.js"></script>
     </body>
 </html>
 
