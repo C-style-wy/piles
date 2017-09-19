@@ -12,7 +12,11 @@
     <name>interaction-service</name>
     <url>http://maven.apache.org</url>
     <dependencies>
-
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>interaction-service</finalName>

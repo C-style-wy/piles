@@ -13,8 +13,14 @@
     <url>http://maven.apache.org</url>
     <modules>
         <module>core-util</module>
+        <module>core-base</module>
     </modules>
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>core</finalName>
