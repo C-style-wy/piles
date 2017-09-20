@@ -118,9 +118,9 @@
 
         <script type="text/javascript">
             function severCheck() {
-                if(check()) {
+//                if(check()) {
                     window.location.href = "main/index";
-                }
+//                }
             }
 
             function check() {
@@ -132,6 +132,19 @@
                         time: 3
                     });
                     $("#loginname").focus();
+                    return false;
+                } else {
+                    $("#loginname").val(jQuery.trim($('#loginname').val()));
+                }
+                if($("#password").val() == "") {
+                    $("#password").tips({
+                        side: 2,
+                        msg: '密码不得为空',
+                        bg: '#AE81FF',
+                        time: 3
+                    });
+
+                    $("#password").focus();
                     return false;
                 }
             }

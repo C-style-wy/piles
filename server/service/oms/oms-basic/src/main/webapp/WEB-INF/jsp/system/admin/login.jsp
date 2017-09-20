@@ -118,9 +118,9 @@
 
         <script type="text/javascript">
             function severCheck() {
-                if(check()) {
+//                if(check()) {
                     window.location.href = "main/index";
-                }
+//                }
             }
 
             function check() {
